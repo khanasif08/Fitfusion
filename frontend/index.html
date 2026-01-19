@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FitElite</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header / Nav -->
+    <header class="header">
+        <div class="container nav">
+            <a class="logo" href="index.html"><span>Fit</span>Fusion</a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#pricing">Membership</a>
+                <a href="workouts.html">Workouts</a>
+                <a href="#programs">Programs</a>
+                <a href="login.html" id="loginLink">Login</a>
+                <a href="register.html" id="registerLink">Register</a>
+                <span id="userGreeting" style="display:none; font-weight:600;"></span>
+                <a href="#" id="logoutBtn" style="display:none;">Logout</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <img class="hero-bg" src="assets/hero.jpg" alt="Athlete training">
+        <div class="hero-content container reveal-up">
+            <h1>Train Hard. Stay Consistent.</h1>
+            <p>Programs inspired by pro bodybuilding standards — adapted to your schedule.</p>
+            <div class="hero-cta">
+                <a class="btn btn-primary" href="#programs">Explore Programs</a>
+                <a class="btn btn-ghost" href="workouts.html">Browse Workouts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs -->
+    <section id="programs" class="section container">
+        <div class="section-head">
+            <h2 class="section-title">Programs</h2>
+            <p class="section-subtitle">Pick a path. We’ll handle the progression.</p>
+        </div>
+
+        <div class="grid-3">
+            <article class="card reveal-up" data-program='{"title":"PPL Elite","weeks":8,"level":"Intermediate"}'>
+                <img src="assets/ppl.jpg" alt="Program" class="card-img">
+                <div class="card-body">
+                    <h3>PPL Elite</h3>
+                    <p>Classic Push/Pull/Legs split with progressive overload and deload weeks.</p>
+                    <button class="btn btn-secondary program-details">Details</button>
+                </div>
+            </article>
+
+            <article class="card reveal-up" data-program='{"title":"Bro Split Pro","weeks":10,"level":"All Levels"}'>
+                <img src="assets/bro.jpg" alt="Program" class="card-img">
+                <div class="card-body">
+                    <h3>Bro Split Pro</h3>
+                    <p>Old-school hypertrophy emphasis — chest, back, shoulders, arms, legs.</p>
+                    <button class="btn btn-secondary program-details">Details</button>
+                </div>
+            </article>
+
+            <article class="card reveal-up" data-program='{"title":"Cut & Condition","weeks":6,"level":"Beginner+"}'>
+                <img src="assets/cut.jpg" alt="Program" class="card-img">
+                <div class="card-body">
+                    <h3>Cut &amp; Condition</h3>
+                    <p>Metabolic circuits + accessories to trim fat while keeping strength.</p>
+                    <button class="btn btn-secondary program-details">Details</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section container">
+        <div class="section-head">
+            <h2 class="section-title">Membership</h2>
+            <p class="section-subtitle">Start free. Upgrade when you’re ready.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="price card reveal-up">
+                <h3>Starter</h3>
+                <p class="price-tag">0<span>INR/mo</span></p>
+                <ul class="price-list">
+                    <li>Basic programs</li>
+                    <li>Workout calendar</li>
+                    <li>Progress notes</li>
+                </ul>
+                <button class="btn btn-primary"><a href="workouts.html">Get Started</a></button>
+            </div>
+
+            <div class="price card featured reveal-up">
+                <div class="badge">Popular</div>
+                <h3>Pro</h3>
+                <p class="price-tag">999<span>INR/mo</span></p>
+                <ul class="price-list">
+                    <li>All programs unlocked</li>
+                    <li>Advanced analytics</li>
+                    <li>Exercise video demos</li>
+                </ul>
+                <button class="btn btn-primary">Go Pro</button>
+            </div>
+
+            <div class="price card reveal-up">
+                <h3>Elite</h3>
+                <p class="price-tag">1999<span>INR/mo</span></p>
+                <ul class="price-list">
+                    <li>Coaching templates</li>
+                    <li>Custom cycles</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="btn btn-primary">Join Elite</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a class="logo" href="#"><span>Fit</span>Fusion</a>
+            <p>© 2025 FitFusion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Payment Modals -->
+    <div id="paymentModal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close="paymentModal"></div>
+        <div class="modal-card">
+            <button class="modal-close" data-close="paymentModal">×</button>
+            <h3>Go Pro Membership</h3>
+            <img src="assets/go-pro.png" style="max-width:200px;">
+        </div>
+    </div>
+
+    <div id="elitePaymentModal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close="elitePaymentModal"></div>
+        <div class="modal-card">
+            <button class="modal-close" data-close="elitePaymentModal">×</button>
+            <h3>Elite Membership</h3>
+            <img src="assets/elite.png" style="max-width:200px;">
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user) {
+            document.getElementById("loginLink").style.display = "none";
+            document.getElementById("registerLink").style.display = "none";
+            document.getElementById("userGreeting").style.display = "inline";
+            document.getElementById("userGreeting").innerText = ` Hi, ${user.username}`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFusion - Nutrition Planner</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/nutrition.css">
+</head>
+
+<body>
+    <header>
+        <h1>Nutrition Planner</h1>
+    </header>
+
+    <main>
+        <section class="calculator">
+            <h2>Calorie Calculator</h2>
+
+            <label>
+                Weight (kg):
+                <input type="number" id="weight">
+            </label>
+
+            <label>
+                Height (cm):
+                <input type="number" id="height">
+            </label>
+
+            <label>
+                Age:
+                <input type="number" id="age">
+            </label>
+
+            <label>
+                Activity Level:
+                <select id="activity">
+                    <option value="1.2">Sedentary</option>
+                    <option value="1.375">Lightly Active</option>
+                    <option value="1.55">Moderately Active</option>
+                    <option value="1.725">Very Active</option>
+                </select>
+            </label>
+
+            <label>
+                Goal:
+                <select id="goal">
+                    <option value="lose">Weight Loss</option>
+                    <option value="maintain">Maintain</option>
+                    <option value="gain">Weight Gain</option>
+                </select>
+            </label>
+
+            <button id="calculate">Calculate</button>
+
+            <div id="results"></div>
+        </section>
+
+        <section class="meal-plan">
+            <h2>Suggested Meal Plan</h2>
+            <ul id="meals"></ul>
+        </section>
+    </main>
+
+    <!-- JS -->
+    <script src="js/nutrition.js"></script>
+</body>
+</html>

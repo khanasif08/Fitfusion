@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitFusion — Workouts</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html"><span>Fit</span>Fusion</a>
+
+      <nav class="nav-links" id="navLinks2">
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#schedule">Schedule</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a class="active" href="workouts.html">Workouts</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger2" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="section container">
+    <div class="section-head">
+      <h1 class="section-title">Workout Library</h1>
+      <p class="section-subtitle">Filter by muscle group or difficulty.</p>
+    </div>
+
+    <div class="filters">
+      <select id="filterGroup">
+        <option value="all">All Muscles</option>
+        <option value="chest">Chest</option>
+        <option value="back">Back</option>
+        <option value="legs">Legs</option>
+        <option value="shoulders">Shoulders</option>
+        <option value="arms">Arms</option>
+      </select>
+
+      <select id="filterLevel">
+        <option value="all">All Levels</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+    </div>
+
+    <div id="workoutGrid" class="grid-3">
+      <!-- Cards injected by JS -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="logo" href="#"><span>Fit</span>Fusion</a>
+      <p>© 2025 FitFusion. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

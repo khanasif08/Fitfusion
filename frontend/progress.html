@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFusion Progress Tracker</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/progress.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>FitFusion</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="progress.html" class="active">Progress Tracker</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="tracker-section">
+        <h2>Track Your Progress</h2>
+
+        <div class="tracker-form">
+            <label>Date: <input type="date" id="log-date"></label>
+            <label>Weight (kg): <input type="number" id="weight"></label>
+            <label>Chest (cm): <input type="number" id="chest"></label>
+            <label>Waist (cm): <input type="number" id="waist"></label>
+            <button id="add-log">Add Entry</button>
+        </div>
+
+        <canvas id="progressChart"></canvas>
+
+        <div class="notes-section">
+            <h3>Motivation Notes</h3>
+            <textarea id="notes" placeholder="Write your fitness thoughts or motivation..."></textarea>
+            <button id="save-notes">Save Notes</button>
+        </div>
+
+        <div class="log-history">
+            <h3>History</h3>
+            <ul id="history-list"></ul>
+        </div>
+    </section>
+
+    <!-- JS -->
+    <script src="js/progress.js"></script>
+</body>
+</html>
