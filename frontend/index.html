@@ -142,10 +142,16 @@
     <!-- Payment Modals -->
     <div id="paymentModal" class="modal" aria-hidden="true">
         <div class="modal-backdrop" data-close="paymentModal"></div>
-        <div class="modal-card">
-            <button class="modal-close" data-close="paymentModal">×</button>
-            <h3>Go Pro Membership</h3>
-            <img src="assets/go-pro.png" style="max-width:200px;">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="paymentModalTitle">
+            <button class="modal-close" data-close="paymentModal" aria-label="Close">×</button>
+            <h3 id="paymentModalTitle">Go Pro Membership</h3>
+            <p class="muted">Scan the QR code below to complete your payment:</p>
+            <div class="modal-body" style="text-align:center; margin:20px 0;">
+                <img src="go-pro.png" alt="QR Code for Payment" style="max-width:200px;">
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-ghost" data-close="paymentModal">Close</button>
+            </div>
         </div>
     </div>
 
