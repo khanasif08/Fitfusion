@@ -21,11 +21,10 @@ connectDB();
    Middleware
 ====================== */
 app.use(
-  cors({
-    origin: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
+   cors({
+      origin: true,
+      methods: ["GET", "POST", "PUT", "DELETE"],
+   })
 );
 
 app.use(express.json());
@@ -42,7 +41,7 @@ app.use("/api/auth", authRoutes);
 app.use(express.static(path.join(__dirname, "../frontend")));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+   res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
 
 /* ======================
@@ -50,5 +49,5 @@ app.get("/", (req, res) => {
 ====================== */
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+   console.log(`🚀 Server running on port ${PORT}`);
 });
