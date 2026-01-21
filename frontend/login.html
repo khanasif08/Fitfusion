@@ -24,8 +24,8 @@
     </div>
 
     <script>
-        const API_URL = "http://localhost:5000/api/auth"; 
-        // later change to deployed backend URL
+        // ✅ IMPORTANT: relative API path (works locally + on Render)
+        const API_URL = "/api/auth";
 
         const form = document.getElementById("loginForm");
 
