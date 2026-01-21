@@ -23,7 +23,7 @@ const io = new IntersectionObserver(
 document.querySelectorAll(".reveal-up").forEach(el => io.observe(el));
 
 /* =====================================================
-   MODALS — DECLARE ONCE (🔥 IMPORTANT FIX)
+   MODALS — DECLARED ONCE (IMPORTANT)
 ===================================================== */
 const programModal = document.getElementById("modal");
 const paymentModal = document.getElementById("paymentModal");
@@ -35,10 +35,12 @@ const modalMeta = document.getElementById("modalMeta");
 /* ====== PROGRAM DETAILS MODAL ====== */
 document.querySelectorAll(".program-details").forEach(btn => {
   btn.addEventListener("click", () => {
-    const program = JSON.parse(btn.closest(".card").dataset.program);
+    const card = btn.closest("[data-program]");
+    if (!card) return;
 
+    const program = JSON.parse(card.dataset.program);
     modalTitle.textContent = program.title;
-    modalMeta.textContent = `${program.weeks} weeks • ${program.level}`;
+    modalMeta.textContent = `${program.level} • ${program.weeks} weeks`;
 
     programModal.style.display = "flex";
     programModal.setAttribute("aria-hidden", "false");
@@ -57,7 +59,7 @@ programModal?.addEventListener("click", e => {
 
 /* ====== GO PRO MODAL ====== */
 document.querySelectorAll("button").forEach(btn => {
-  if (btn.textContent.includes("Go Pro")) {
+  if (btn.textContent.trim() === "Go Pro") {
     btn.addEventListener("click", () => {
       paymentModal.style.display = "flex";
       paymentModal.setAttribute("aria-hidden", "false");
@@ -76,7 +78,7 @@ paymentModal
 
 /* ====== ELITE MODAL ====== */
 document.querySelectorAll("button").forEach(btn => {
-  if (btn.textContent.includes("Join Elite")) {
+  if (btn.textContent.trim() === "Join Elite") {
     btn.addEventListener("click", () => {
       eliteModal.style.display = "flex";
       eliteModal.setAttribute("aria-hidden", "false");
@@ -96,6 +98,7 @@ eliteModal
 /* ====== Scroll to top ====== */
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 window.addEventListener("scroll", () => {
+  if (!scrollTopBtn) return;
   scrollTopBtn.style.display =
     document.documentElement.scrollTop > 200 ? "block" : "none";
 });
