@@ -194,3 +194,76 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "login.html";
   });
 });
+
+// =======================
+// PROGRAM DETAILS MODAL
+// =======================
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modalTitle");
+const modalMeta = document.getElementById("modalMeta");
+
+document.querySelectorAll(".program-details").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const program = JSON.parse(
+      btn.closest(".card").dataset.program
+    );
+
+    modalTitle.innerText = program.title;
+    modalMeta.innerText = `${program.weeks} weeks • ${program.level}`;
+
+    modal.style.display = "flex";
+    modal.setAttribute("aria-hidden", "false");
+  });
+});
+
+// Close modal
+document.querySelectorAll("[data-close='modal']").forEach(el => {
+  el.addEventListener("click", () => {
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+  });
+});
+
+
+// =======================
+// GO PRO MODAL
+// =======================
+const paymentModal = document.getElementById("paymentModal");
+
+document.querySelectorAll("button").forEach(btn => {
+  if (btn.innerText.includes("Go Pro")) {
+    btn.addEventListener("click", () => {
+      paymentModal.style.display = "flex";
+      paymentModal.setAttribute("aria-hidden", "false");
+    });
+  }
+});
+
+paymentModal.querySelectorAll("[data-close='paymentModal']").forEach(el => {
+  el.addEventListener("click", () => {
+    paymentModal.style.display = "none";
+    paymentModal.setAttribute("aria-hidden", "true");
+  });
+});
+
+
+// =======================
+// ELITE MODAL
+// =======================
+const eliteModal = document.getElementById("elitePaymentModal");
+
+document.querySelectorAll("button").forEach(btn => {
+  if (btn.innerText.includes("Join Elite")) {
+    btn.addEventListener("click", () => {
+      eliteModal.style.display = "flex";
+      eliteModal.setAttribute("aria-hidden", "false");
+    });
+  }
+});
+
+eliteModal.querySelectorAll("[data-close='elitePaymentModal']").forEach(el => {
+  el.addEventListener("click", () => {
+    eliteModal.style.display = "none";
+    eliteModal.setAttribute("aria-hidden", "true");
+  });
+});
