@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -60,6 +61,23 @@
     </div>
   </main>
 
+  <div id="videoModal" class="modal" aria-hidden="true">
+
+    <div class="modal-backdrop" data-close="videoModal"></div>
+
+    <div class="modal-card" style="max-width:700px">
+
+      <button class="modal-close" data-close="videoModal">×</button>
+
+      <h3>Exercise Demo</h3>
+
+      <iframe id="exerciseVideo" width="100%" height="380" src="" frameborder="0" allowfullscreen>
+      </iframe>
+
+    </div>
+
+  </div>
+
   <footer class="footer">
     <div class="container footer-inner">
       <a class="logo" href="#"><span>Fit</span>Fusion</a>
@@ -70,4 +88,5 @@
   <!-- JS -->
   <script src="js/script.js"></script>
 </body>
+
 </html>

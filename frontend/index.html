@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FitElite</title>
+    <title>FitFusion</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
@@ -28,6 +28,8 @@
                 <a href="register.html" id="registerLink">Register</a>
                 <span id="userGreeting" style="display:none; font-weight:600;"></span>
                 <a href="#" id="logoutBtn" style="display:none;">Logout</a>
+
+                
             </nav>
 
             <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -131,6 +133,31 @@
         </div>
     </section>
 
+    <div id="modal" class="modal" aria-hidden="true">
+
+        <div class="modal-backdrop" data-close="modal"></div>
+
+        <div class="modal-card">
+            <button class="modal-close" data-close="modal">×</button>
+
+            <h3 id="modalTitle"></h3>
+            <p id="modalMeta" class="muted"></p>
+
+            <div class="modal-body">
+                <p id="modalDesc">
+                    Structured program designed to improve strength and muscle growth.
+                </p>
+            </div>
+
+            <div class="modal-actions">
+                <a id="startProgramBtn" class="btn btn-primary">Start Program</a>
+                <button class="btn btn-ghost" data-close="modal">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-inner">
@@ -162,9 +189,9 @@
             <h3>Elite Membership</h3>
             <p class="muted">Scan the QR code below to complete your payment:</p>
             <img src="assets/elite.png" style="max-width:200px;">
-            
+
         </div>
-        
+
     </div>
 
     <!-- JS -->
