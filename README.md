@@ -33,7 +33,7 @@ FitFusion is an AI-powered fitness web application designed to help users track 
 ![Programs](program.png)
 
 ### Workout Library
-![workout](workout library.png)
+![workout](workout_library.png)
 
 ---
 
